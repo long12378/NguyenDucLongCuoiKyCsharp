@@ -1,0 +1,68 @@
+﻿@model List<ModelEF.Model.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminPage/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Danh Sach Nguoi Dung
+                <span class="tools pull-right">
+                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    <a href="javascript:;" class="fa fa-cog"></a>
+                    <a href="javascript:;" class="fa fa-times"></a>
+                </span>
+            </header>
+            <div class="panel-body">
+                @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="col-md-4">
+                                <a href="/AdminPage/Product/create" style="float: right;">them san pham</a>    
+                            </div>
+                        </div>
+                    </div>
+                }
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Product name</th>
+                                <th>Category name</th>
+                                <th>Unit cost</th>
+                                <th>quantity</th>
+                                <th>Image</th>
+                                <th>description</th>
+                                <th>status</th>
+                                <th>action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.CategoryID</td>
+                                <td>@item.UnitCost</td>
+                                <td>@item.Quantity</td>
+                                <td><img style="width: 100px; height: 100px;" src="~/Assets/Admin/image/@item.Image"/></td>
+                                <td>@item.Decription</td>
+                                <td>@item.Status</td>
+                                <td>
+                                    @Html.ActionLink("detail", "detail", new { ID = item.ID })
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </section>
+    </div>
+</div>
+
