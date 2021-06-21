@@ -141,6 +141,7 @@
     <Compile Include="Areas\AdminPage\Controllers\UserController.cs" />
     <Compile Include="Areas\AdminPage\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1092,6 +1093,7 @@
     <Content Include="Assets\Client\js\waypoints.min.js" />
     <Content Include="Assets\Client\js\ytplayer.min.js" />
     <Content Include="Assets\Client\mail\mail.php" />
+    <Content Include="Assets\Client\style.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1234,6 +1236,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
